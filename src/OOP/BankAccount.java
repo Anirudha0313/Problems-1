@@ -6,32 +6,24 @@ class BankAccount {
     int accountNumber;
     double balance;
 
-    // Constructor
     BankAccount(String name, int accNo, double bal) {
-        accountHolder = name;
-        accountNumber = accNo;
-        balance = bal;
+        this.accountHolder = name;
+        this.accountNumber = accNo;
+        this.balance = bal;
     }
 
-    // Deposit method
     void deposit(double amount) {
-        balance = balance + amount;
-        System.out.println("Deposited: " + amount);
+        balance += amount;
     }
 
-    // Withdraw method
     void withdraw(double amount) {
-
-        if (amount > balance) {
+        if (amount > balance)
             System.out.println("Insufficient Balance");
-        } else {
-            balance = balance - amount;
-            System.out.println("Withdrawn: " + amount);
-        }
+        else
+            balance -= amount;
     }
 
-    // Display balance
     void displayBalance() {
-        System.out.println("Current Balance: " + balance);
+        System.out.println("Balance: " + balance);
     }
 }
